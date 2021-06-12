@@ -1,4 +1,3 @@
-import CardMedia from "@material-ui/core/CardMedia";
 import AppBar from "@material-ui/core/AppBar";
 import Container from "@material-ui/core/Container";
 import Hidden from "@material-ui/core/Hidden";

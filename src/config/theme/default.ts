@@ -91,7 +91,7 @@ const overrides = {
     },
 
     body1: {
-      fontWeight: "400",
+      fontWeight: 400,
       color: "#747986",
       fontSize: 16,
     },
