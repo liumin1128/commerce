@@ -1,31 +1,36 @@
-// import Head from "next/head";
-// import Image from "next/image";
-import Button from "@material-ui/core/Button";
-import { initializeApollo } from "@/lib/apollo/client";
-import NewsList from "@/components/NewsList";
-import { NewsListQuery } from "@/graphql/news";
+import Container from "@material-ui/core/Container";
+import Header from "@/components/Layouts/Header";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import About from "@/container/About";
+import Contact from "@/container/Contact";
+import Footer from "@/container/Footer";
 
 export default function Home() {
   return (
     <div>
-      <NewsList />
-      <Button variant="contained" color="primary">
-        1111
-      </Button>
+      <Header />
+      <Container>
+        <Breadcrumbs
+          title="About"
+          routes={[
+            {
+              title: "Home",
+              pathname: "/",
+            },
+            {
+              title: "About",
+              pathname: "/about",
+            },
+          ]}
+        />
+
+        <About />
+
+        <Contact />
+
+        <Footer />
+      </Container>
+      {/* <Box p={20}></Box> */}
     </div>
   );
-}
-
-export async function getServerSideProps() {
-  const apolloClient = initializeApollo();
-
-  await apolloClient.query({
-    query: NewsListQuery,
-  });
-
-  return {
-    props: {
-      initialApolloState: apolloClient.cache.extract(),
-    },
-  };
 }
