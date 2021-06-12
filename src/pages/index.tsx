@@ -30,7 +30,6 @@ export default function Home() {
 
         <Footer />
       </Container>
-      {/* <Box p={20}></Box> */}
     </div>
   );
 }
