@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
-import Image from "@/components/Image";
+import { useRouter } from "next/router";
 import { useStyles } from "./styles";
 
 const list = new Array(10).fill("xxx").map((_, idx) => {
@@ -13,6 +13,7 @@ const list = new Array(10).fill("xxx").map((_, idx) => {
 
 function SimpleTabs() {
   const classes = useStyles();
+  const router = useRouter();
 
   return (
     <div className={classes.root}>
@@ -27,7 +28,14 @@ function SimpleTabs() {
           <Grid container spacing={3}>
             {list.map((i) => {
               return (
-                <Grid item xs={6} md={4}>
+                <Grid
+                  item
+                  xs={6}
+                  md={4}
+                  onClick={() => {
+                    router.push("/product");
+                  }}
+                >
                   <div
                     className={classes.image}
                     style={{
