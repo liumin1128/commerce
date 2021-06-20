@@ -2,6 +2,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Container from "@material-ui/core/Container";
 import Hidden from "@material-ui/core/Hidden";
 import Toolbar from "@material-ui/core/Toolbar";
+import { useRouter } from "next/router";
 import { useStyles } from "./styles";
 import NavTabs from "@/components/NavTabs";
 import Button from "@/components/Button";
@@ -9,6 +10,7 @@ import NavList from "@/config/nav";
 
 export default function Header() {
   const classes = useStyles();
+  const router = useRouter();
   return (
     <AppBar position="static" className={classes.root}>
       <Container>
@@ -21,7 +23,12 @@ export default function Header() {
           />
           <div className={classes.nav}>
             <Hidden smDown>
-              <NavTabs navList={NavList} />
+              <NavTabs
+                navList={NavList}
+                onChange={(path: string) => {
+                  router.push(path);
+                }}
+              />
             </Hidden>
           </div>
           <Button>Contcat</Button>
