@@ -1,7 +1,7 @@
 import Container from "@material-ui/core/Container";
 import Header from "@/components/Layouts/Header";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import HowItWorks from "@/container/HowItWorks";
+import WinningProducts from "@/container/WinningProducts";
 import Contact from "@/container/Contact";
 import Footer from "@/container/Footer";
 
@@ -24,6 +24,9 @@ export default function Home() {
           ]}
         />
 
+        <WinningProducts />
+
+        <Contact />
         <Footer />
       </Container>
       {/* <Box p={20}></Box> */}
