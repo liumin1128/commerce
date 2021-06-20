@@ -77,6 +77,7 @@ export default function Header() {
                 button
                 onClick={() => {
                   router.push(i.pathname);
+                  setOpen(false);
                 }}
               >
                 <ListItemText primary={i.label} />
