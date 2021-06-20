@@ -1,7 +1,7 @@
 import Container from "@material-ui/core/Container";
 import Header from "@/components/Layouts/Header";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import WinningProducts from "@/container/WinningProducts";
+import ProductsDetail from "@/container/ProductsDetail";
 import Contact from "@/container/Contact";
 import Footer from "@/container/Footer";
 
@@ -23,6 +23,8 @@ export default function Home() {
             },
           ]}
         />
+
+        <ProductsDetail />
 
         <Contact />
         <Footer />
