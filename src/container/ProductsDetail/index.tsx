@@ -2,22 +2,13 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import { useRouter } from "next/router";
 import Slider from "@/components/Slider";
 import Button from "@/components/Button";
 
 import { useStyles } from "./styles";
 
-const list = new Array(10).fill("xxx").map((_, idx) => {
-  return {
-    title: "DOWCH-00" + idx,
-    image: "https://www.dowch.com/wp-content/uploads/2020/03/1.jpg",
-  };
-});
-
 function SimpleTabs() {
   const classes = useStyles();
-  const router = useRouter();
 
   return (
     <div className={classes.root}>
